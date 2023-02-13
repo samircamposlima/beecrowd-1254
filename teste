@@ -1,0 +1,46 @@
+while True:
+ try:
+
+  tag = input().strip()
+  num = int(input().strip())
+  string = input().strip()
+
+
+  i = 0
+  len_tag = len(tag)
+
+  while i < len(string):
+
+
+
+
+    while i < len(string) and string[i] != '<':
+        if i == len(string)-1:
+         print(string[i], end='\n')
+         i += 1
+        else:
+         print(string[i], end='')
+         i += 1
+
+    while i < len(string) and string[i] != '>':
+        if string[i].upper() == tag[0].upper():
+            if string[i:i+len_tag].upper() == tag.upper():
+                print(num, end='')
+                i += len_tag
+            else:
+                print(string[i], end='')
+                i += 1
+        else:
+            print(string[i], end='')
+            i += 1
+
+    if i < len(string):
+        if i == len(string)-1:
+         print(string[i], end='\n')
+         i += 1
+        else:
+            print(string[i], end='')
+            i += 1
+
+
+ except EOFError: break
